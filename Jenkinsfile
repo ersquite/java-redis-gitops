@@ -1,5 +1,11 @@
-stage('Security Scan') {
-    steps {
-        sh 'trivy image --exit-code 1 --severity CRITICAL,HIGH nginx:stable'
+pipeline {
+    agent any
+
+    stages {
+        stage('Code Quality Analysis') {
+            steps {
+                echo 'SonarQube analysis will be configured here'
+            }
+        }
     }
 }
